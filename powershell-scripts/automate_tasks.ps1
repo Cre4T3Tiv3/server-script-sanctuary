@@ -3,18 +3,21 @@
 # Task:
 # Monitor the root directory's disk usage and send an alert if it exceeds 90%.
 
-# Extensive Comments:
-# - The `#!/usr/bin/env pwsh` at the beginning of the script specifies the interpreter for executing the script.
+# Extensive Details:
+# - The script is suitable for any OS with PowerShell Core, which includes Windows, Linux, and macOS.
 # - We define a disk usage threshold (in this case, 90%) which you can adjust.
-# - The `df /` command reports the amount of disk space used by file systems.
-# - `tail -1` ensures we only get the last line of the df output, which contains the relevant usage information.
-# - `awk '{print $5}'` extracts the fifth field (i.e., the usage percentage) from the output.
-# - `sed 's/%//g'` is used to strip the '%' character from the output.
-# - We then compare the extracted usage value against our defined threshold to decide whether to send an alert.
-# - The `Start-Sleep -s 10` command makes the script wait for 10 seconds before rechecking the disk usage.
+# - We use the `Get-PSDrive` cmdlet, which works across multiple OSes, to get details of the root filesystem.
+# - We calculate the usage percentage by dividing the used space by the total space.
+# - We compare the usage value against our defined threshold to decide whether to send an alert.
+# - The `Start-Sleep -Seconds 10` command makes the script wait for 10 seconds before rechecking the disk usage.
 
-$diskUsage = df / | tail -1 | awk '{print $5}' | sed 's/%//g'
-if ($diskUsage -gt 90) {
+$rootDrive = Get-PSDrive -Name "Root" -PSProvider FileSystem
+$usedSpace = $rootDrive.Used
+$totalSpace = $rootDrive.Size
+$diskUsagePercent = ($usedSpace / $totalSpace) * 100
+
+if ($diskUsagePercent -gt 90) {
     Write-Output "Disk usage alert! It's over 90%"
 }
-Start-Sleep -s 10
+Start-Sleep -Seconds 10
+git commit -m 'update(details): revised the Extensive Details across all in-scope code.'

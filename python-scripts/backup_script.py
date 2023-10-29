@@ -6,7 +6,7 @@ backup_script.py
 Task:
 Monitor 'source_directory' for new files and back them up in 'backup_directory'.
 
-Extensive Comments:
+Extensive Details:
 - The code uses Python's standard libraries (os and shutil) to interact with the filesystem.
 - The os.listdir() method provides a list of filenames in a directory.
 - shutil.copy2() allows us to copy a file along with its metadata.

@@ -6,7 +6,7 @@ file_parser.py
 Task:
 Parse a file with data rows, filter out invalid entries, and write the valid entries to a new file.
 
-Extensive Comments:
+Extensive Details:
 - We define the `filter_and_write` function which is responsible for filtering data based on specific criteria and writing the results to two separate files.
 - Within the function:
     - We open the source file in read mode.
@@ -36,7 +36,7 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
         valid_entries = []
         invalid_entries = []
 
-        # Process each line in the source file.
+        # Process each line in the source file
         for line in file:
             data = line.strip().split(",")
             if len(data) == 3 and all(
