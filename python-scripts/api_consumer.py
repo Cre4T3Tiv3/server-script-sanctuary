@@ -6,7 +6,7 @@ api_consumer.py
 Task:
 Fetch and print data from 'https://api.example.com/data'.
 
-Extensive Comments:
+Extensive Details:
 - The script uses the `requests` library to send a GET request to the specified API endpoint.
 - The `json()` method of the response object is used to parse the returned JSON data.
 - The data is then printed to the console.

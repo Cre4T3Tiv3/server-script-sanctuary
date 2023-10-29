@@ -6,7 +6,7 @@ website_uptime_checker.py
 Task:
 Check if 'https://www.example.com' is accessible and print the status.
 
-Extensive Comments:
+Extensive Details:
 - The script uses Python's `requests` library to send a GET request to the specified website.
 - The `status_code` attribute of the response object provides the HTTP status code.
 - A status code of 200 indicates that the request was successful, implying that the website is up and running.
