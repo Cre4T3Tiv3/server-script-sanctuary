@@ -4,7 +4,6 @@
 # Monitor disk usage and send an alert if the usage exceeds a specified threshold (e.g., 90%).
 
 # Extensive Details:
-# - The #!/bin/bash at the beginning of the script specifies the interpreter for executing the script.
 # - We define a disk usage threshold (in this case, 90%) which you can adjust.
 # - An infinite while loop is used to periodically check the disk usage.
 # - Inside the loop, we use the df command, which reports the amount of disk space used by file systems. We then extract the usage percentage for the root filesystem.
