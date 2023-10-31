@@ -65,7 +65,9 @@ def test_fetch_api_data(api_url=API_URL):
     data = fetch_api_data(api_url)
 
     # Check if the returned data is as expected.
-    assert isinstance(data, list), f"Expected a list of blog posts; received a data structure of: {type(data)}"
+    assert isinstance(
+        data, list
+    ), f"Expected a list of blog posts; received a data structure of: {type(data)}"
 
     print("Test passed!")
 
@@ -76,8 +78,4 @@ if __name__ == "__main__":
     if data is not None:
         print(json.dumps(data[:5], indent=4))  # Pretty-print the first 5 items.
     else:
-<<<<<<< HEAD
         print("Failed to fetch data from the website!")
-=======
-        print("Failed to fetch data.")
->>>>>>> 1073162ba5283a8e87cbde15bc0af28c470b526b
