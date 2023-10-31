@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 website_uptime_checker.py
 
@@ -26,8 +24,37 @@ def check_website_status(url):
     Returns:
     - str: A message indicating whether the website is up or down.
     """
-    response = requests.get(url)
-    if response.status_code == 200:
-        return "Website is up!"
-    else:
-        return "Website is down!"
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            return "Website is up!"
+        else:
+            return "Website is down!"
+    except requests.exceptions.RequestException as err:
+        return f"Error occurred: {err}"
+    except Exception as e:
+        return f"An unexpected error occurred: {str(e)}"
+
+
+def test_check_website_status():
+    """
+    Test the check_website_status function.
+
+    This function tests the check_website_status function by checking the status of 'https://www.example.com'.
+    """
+
+    # Call the check_website_status function.
+    status = check_website_status("https://www.example.com")
+
+    # Check if the status is as expected.
+    assert status in [
+        "Website is up!",
+        "Website is down!",
+    ], "Unexpected status message."
+
+    print("Test passed.")
+
+
+if __name__ == "__main__":
+    test_check_website_status()
+    print(check_website_status("https://www.example.com"))
