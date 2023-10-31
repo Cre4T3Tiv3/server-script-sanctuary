@@ -76,4 +76,8 @@ if __name__ == "__main__":
     if data is not None:
         print(json.dumps(data[:5], indent=4))  # Pretty-print the first 5 items.
     else:
+<<<<<<< HEAD
         print("Failed to fetch data from the website!")
+=======
+        print("Failed to fetch data.")
+>>>>>>> 1073162ba5283a8e87cbde15bc0af28c470b526b
