@@ -27,13 +27,13 @@ def check_website_status(url):
     try:
         response = requests.get(url)
         if response.status_code == 200:
-            return "Website is up!"
+            return "The website is up!"
         else:
             return "Website is down!"
     except requests.exceptions.RequestException as err:
-        return f"Error occurred: {err}"
+        return f"The following error occurred: {err}"
     except Exception as e:
-        return f"An unexpected error occurred: {str(e)}"
+        return f"The following unexpected error occurred: {str(e)}"
 
 
 def test_check_website_status():
@@ -48,11 +48,11 @@ def test_check_website_status():
 
     # Check if the status is as expected.
     assert status in [
-        "Website is up!",
-        "Website is down!",
-    ], "Unexpected status message."
+        "The website is up!",
+        "The website is down!",
+    ], "An unexpected status message."
 
-    print("Test passed.")
+    print("Test passed!")
 
 
 if __name__ == "__main__":

@@ -41,9 +41,9 @@ def fetch_api_data(api_url=API_URL):
         response.raise_for_status()
 
     except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP error occurred: {http_err}")  # Python 3.6
+        print(f"The following HTTP error occurred: {http_err}")
     except Exception as err:
-        print(f"Other error occurred: {err}")  # Python 3.6
+        print(f"The following error occurred: {err}")
     else:
         # Parse the response body as JSON and return the resulting data.
         # The json method of the Response object takes the response body and parses it as JSON. It then returns the resulting data.
@@ -65,9 +65,9 @@ def test_fetch_api_data(api_url=API_URL):
     data = fetch_api_data(api_url)
 
     # Check if the returned data is as expected.
-    assert isinstance(data, list), f"Expected a list of posts, but got {type(data)}"
+    assert isinstance(data, list), f"Expected a list of blog posts; received a data structure of: {type(data)}"
 
-    print("Test passed.")
+    print("Test passed!")
 
 
 if __name__ == "__main__":
@@ -76,4 +76,4 @@ if __name__ == "__main__":
     if data is not None:
         print(json.dumps(data[:5], indent=4))  # Pretty-print the first 5 items.
     else:
-        print("Failed to fetch data.")
+        print("Failed to fetch data from the website!")
