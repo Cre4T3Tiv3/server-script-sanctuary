@@ -39,13 +39,13 @@ A tool to monitor website uptime and notify of any downtimes. Dive into its spec
 
 ### [disk_usage_alert.sh](./bash-scripts/disk_usage_alert.sh)
 
-Designed to automate monitoring disk usage and send an alert if the usage exceeds a specified threshold (e.g., 90%). Dive into the [documentation](./documentation/disk_usage_alert.sh.md) for a comprehensive overview.
+Designed to automate monitoring of the disk usage and to send an alert if the usage exceeds a specified threshold (e.g., 90%). Dive into the [documentation](./documentation/disk_usage_alert.sh.md) for a comprehensive overview.
 
 ## 🖥️ PowerShell Scripts
 
 ### [disk_usage_alert.ps1](./powershell-scripts/disk_usage_alert.ps1)
 
-Designed to automate monitoring the root directory's disk usage and send an alert if it exceeds 90%. Dive into the [documentation](./documentation/disk_usage_alert.ps1.md) for a comprehensive overview.
+Designed to automate monitoring of the root directory's disk usage and to send an alert if the usage exceeds a specified threshold (e.g., 90%). Dive into the [documentation](./documentation/disk_usage_alert.ps1.md) for a comprehensive overview.
 
 ## 🚀 Upcoming Features
 
