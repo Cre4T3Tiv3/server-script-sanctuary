@@ -11,9 +11,12 @@ Extensive Details:
 """
 
 import requests
+import json
+
+API_URL = "https://jsonplaceholder.typicode.com/posts"
 
 
-def fetch_api_data(api_url):
+def fetch_api_data(api_url=API_URL):
     """
     Fetch data from an API endpoint and return it as a JSON object.
     This function takes a URL as an argument. It sends a GET request to this URL, which is expected to be an API endpoint.
@@ -48,7 +51,7 @@ def fetch_api_data(api_url):
         return response.json()
 
 
-def test_fetch_api_data():
+def test_fetch_api_data(api_url=API_URL):
     """
     Test the fetch_api_data function.
 
@@ -57,9 +60,6 @@ def test_fetch_api_data():
     It's a simple fake REST API that's useful for testing and prototyping. The '/posts' endpoint returns a list of 100 fake blog posts in JSON format.
     Each post is a dictionary with the following keys: 'userId', 'id', 'title', and 'body'. 'userId' and 'id' are integers, while 'title' and 'body' are strings.
     """
-
-    # Define a known API endpoint.
-    api_url = "https://jsonplaceholder.typicode.com/posts"
 
     # Call the fetch_api_data function with the known API endpoint.
     data = fetch_api_data(api_url)
@@ -72,3 +72,8 @@ def test_fetch_api_data():
 
 if __name__ == "__main__":
     test_fetch_api_data()
+    data = fetch_api_data()
+    if data is not None:
+        print(json.dumps(data[:5], indent=4))  # Pretty-print the first 5 items.
+    else:
+        print("Failed to fetch data.")
