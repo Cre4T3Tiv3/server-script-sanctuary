@@ -93,4 +93,4 @@ Feedback or insights are always welcome. Feel free to fork this repository, cont
 
 ## 📜 License
 
-This project is licensed under the MIT License - for more details, check out the [LICENSE.md](LICENSE.md) file.
+This project is licensed under the MIT License. For more details, check out the [LICENSE.md](LICENSE.md) file.
