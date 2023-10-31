@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-=======
-#!/usr/bin/env python3
-
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 """
 api_consumer.py
 
 Task:
-<<<<<<< HEAD
 Fetch and print data from 'https://jsonplaceholder.typicode.com/posts'.
-=======
-Fetch and print data from 'https://api.example.com/data'.
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 
 Extensive Details:
 - The script uses the `requests` library to send a GET request to the specified API endpoint.
@@ -25,8 +16,6 @@ import requests
 def fetch_api_data(api_url):
     """
     Fetch data from an API endpoint and return it as a JSON object.
-
-<<<<<<< HEAD
     This function takes a URL as an argument. It sends a GET request to this URL, which is expected to be an API endpoint.
     The function then waits for a response from the server. Once the response is received, the function parses the response
     body as JSON and returns the resulting data.
@@ -84,13 +73,3 @@ def test_fetch_api_data():
 
 if __name__ == "__main__":
     test_fetch_api_data()
-=======
-    Args:
-    - api_url (str): The URL of the API endpoint.
-
-    Returns:
-    - dict: Parsed JSON data from the API.
-    """
-    response = requests.get(api_url)
-    return response.json()
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7

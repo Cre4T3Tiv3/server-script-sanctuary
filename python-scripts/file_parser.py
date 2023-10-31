@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-#!/usr/bin/env python3
-
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 """
 file_parser.py
 
@@ -10,31 +5,17 @@ Task:
 Parse a file with data rows, filter out invalid entries, and write the valid entries to a new file.
 
 Extensive Details:
-<<<<<<< HEAD
 - Define the `filter_and_write` function which is responsible for filtering data based on specific criteria and writing the results to two separate files.
 - Within the function:
     - Open the source file in read mode.
     - For each line in the source file, attempt to split it into its constituent parts.
     - If the line matches our criteria for being valid, it's added to the valid_entries list. Otherwise, it's considered invalid and added to the invalid_entries list.
     - After processing all lines, write valid entries to the `valid_file_path` and invalid entries to the `invalid_file_path`.
-=======
-- We define the `filter_and_write` function which is responsible for filtering data based on specific criteria and writing the results to two separate files.
-- Within the function:
-    - We open the source file in read mode.
-    - For each line in the source file, we attempt to split it into its constituent parts.
-    - If the line matches our criteria for being valid, it's added to the valid_entries list. Otherwise, it's considered invalid and added to the invalid_entries list.
-    - After processing all lines, we write valid entries to the `valid_file_path` and invalid entries to the `invalid_file_path`.
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 
 Usage:
 Run this script and use the `filter_and_write` function, providing the necessary paths for the source, valid, and invalid files.
 """
 
-<<<<<<< HEAD
-import os
-
-=======
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 
 def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     """
@@ -49,7 +30,6 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     The function reads the source file line by line. Each line is split based on the comma delimiter.
     Lines with three non-empty segments are considered valid, and others are considered invalid.
     """
-<<<<<<< HEAD
     if not os.path.exists(source_file_path):
         raise FileNotFoundError(f"Source file {source_file_path} does not exist.")
 
@@ -57,12 +37,8 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     invalid_entries = []
 
     with open(source_file_path, "r") as file:
-=======
-    with open(source_file_path, "r") as file:
         valid_entries = []
         invalid_entries = []
-
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
         # Process each line in the source file
         for line in file:
             data = line.strip().split(",")
@@ -80,7 +56,6 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     # Write the invalid entries to the invalid file.
     with open(invalid_file_path, "w") as invalid_file:
         invalid_file.writelines(invalid_entries)
-<<<<<<< HEAD
 
 
 def test_filter_and_write():
@@ -120,5 +95,3 @@ def test_filter_and_write():
 
 if __name__ == "__main__":
     test_filter_and_write()
-=======
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7

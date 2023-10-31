@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-#!/usr/bin/env python3
-
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 """
 backup_script.py
 
@@ -12,11 +7,7 @@ Monitor 'source_directory' for new files and back them up in 'backup_directory'.
 Extensive Details:
 - The code uses Python's standard libraries (os and shutil) to interact with the filesystem.
 - The os.listdir() method provides a list of filenames in a directory.
-<<<<<<< HEAD
 - shutil.copy2() allows copying a file along with its metadata.
-=======
-- shutil.copy2() allows us to copy a file along with its metadata.
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 - The script monitors changes by periodically checking for new files in the source directory and then copying them over to a backup directory.
 """
 
@@ -32,7 +23,6 @@ def backup_files(source_directory, backup_directory):
     - source_directory (str): The directory to monitor for new files.
     - backup_directory (str): The directory where new files should be backed up.
     """
-<<<<<<< HEAD
     try:
         # Check if source_directory exists
         if not os.path.exists(source_directory):
@@ -85,9 +75,3 @@ def test_backup_files():
 
 if __name__ == "__main__":
     test_backup_files()
-=======
-    # Iterate over each file in the source directory.
-    for file_name in os.listdir(source_directory):
-        # Use shutil's copy2 method to copy files along with their metadata.
-        shutil.copy2(os.path.join(source_directory, file_name), backup_directory)
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7

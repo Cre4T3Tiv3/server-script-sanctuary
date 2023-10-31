@@ -4,7 +4,6 @@
 # Monitor disk usage and send an alert if the usage exceeds a specified threshold (e.g., 90%).
 
 # Extensive Details:
-<<<<<<< HEAD
 # - Define a disk usage threshold (in this case, 90%) which you can adjust.
 # - An infinite while loop is used to periodically check the disk usage.
 # - Inside the loop, utilize the df command, which reports the amount of disk space used by file systems. Then extract the usage percentage for the root filesystem.
@@ -12,15 +11,6 @@
 # - The awk '{print $5}' command extracts the fifth field (i.e., the usage percentage) from the output.
 # - The sed 's/%//g' command is used to strip the '%' character from the output.
 # - Then compare the extracted usage value against the defined threshold to decide whether to send an alert.
-=======
-# - We define a disk usage threshold (in this case, 90%) which you can adjust.
-# - An infinite while loop is used to periodically check the disk usage.
-# - Inside the loop, we use the df command, which reports the amount of disk space used by file systems. We then extract the usage percentage for the root filesystem.
-# - The tail -1 command ensures we only get the last line of the df output, which contains the relevant usage information.
-# - The awk '{print $5}' command extracts the fifth field (i.e., the usage percentage) from the output.
-# - The sed 's/%//g' command is used to strip the '%' character from the output.
-# - We then compare the extracted usage value against our defined threshold to decide whether to send an alert.
->>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 # - The sleep 10 command makes the script wait for 10 seconds before rechecking the disk usage.
 
 while true; do
