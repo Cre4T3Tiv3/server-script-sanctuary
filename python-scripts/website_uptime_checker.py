@@ -2,12 +2,12 @@
 website_uptime_checker.py
 
 Task:
-Check if 'https://www.example.com' is accessible and print the status.
+This script checks if 'https://www.example.com' is accessible and prints the status.
 
 Extensive Details:
 - The script uses Python's `requests` library to send a GET request to the specified website.
 - The `status_code` attribute of the response object provides the HTTP status code.
-- A status code of 200 indicates that the request was successful, implying that the website is up and running.
+- A status code of 200 indicates that the request was successful, which implies that the website is up and running.
 - Any other status code suggests potential issues with the website.
 """
 
@@ -16,7 +16,7 @@ import requests
 
 def check_website_status(url):
     """
-    Check the status of a website by sending a GET request.
+    This function checks the status of a website by sending a GET request.
 
     Args:
     - url (str): The URL of the website to check.
@@ -38,19 +38,19 @@ def check_website_status(url):
 
 def test_check_website_status():
     """
-    Test the check_website_status function.
+    This function tests the 'check_website_status' function.
 
-    This function tests the check_website_status function by checking the status of 'https://www.example.com'.
+    The function tests 'check_website_status' by checking the status of 'https://www.example.com'.
     """
 
-    # Call the check_website_status function.
+    # Call the 'check_website_status' function.
     status = check_website_status("https://www.example.com")
 
-    # Check if the status is as expected.
+    # Verify if the status is as expected.
     assert status in [
         "The website is up!",
         "The website is down!",
-    ], "An unexpected status message."
+    ], "An unexpected status message was returned."
 
     print("Test passed!")
 

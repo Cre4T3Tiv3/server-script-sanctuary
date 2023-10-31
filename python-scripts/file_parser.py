@@ -1,19 +1,15 @@
 """
 file_parser.py
 
-Task:
-Parse a file with data rows, filter out invalid entries, and write the valid entries to a new file.
+Task: 
+This script is designed to parse a file located at 'source_file_path' which contains data rows. It filters out invalid entries and writes the valid entries to a file located at 'valid_file_path'. Invalid entries are written to a file at 'invalid_file_path'.
 
 Extensive Details:
-- Define the `filter_and_write` function which is responsible for filtering data based on specific criteria and writing the results to two separate files.
-- Within the function:
-    - Open the source file in read mode.
-    - For each line in the source file, attempt to split it into its constituent parts.
-    - If the line matches our criteria for being valid, it's added to the valid_entries list. Otherwise, it's considered invalid and added to the invalid_entries list.
-    - After processing all lines, write valid entries to the `valid_file_path` and invalid entries to the `invalid_file_path`.
-
-Usage:
-Run this script and use the `filter_and_write` function, providing the necessary paths for the source, valid, and invalid files.
+- The script uses Python's standard libraries to interact with the filesystem and process the text data.
+- The built-in 'open()' function is used to read the source file and write to the output files.
+- The 'str.split()' method is used to divide each line into its constituent parts.
+- The script filters data by checking each line against a defined criteria. If a line matches the criteria, it's considered valid; otherwise, it's considered invalid.
+- The valid and invalid entries are stored in separate lists and then written to their respective files. 
 """
 
 import os
@@ -21,19 +17,21 @@ import os
 
 def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     """
-    Filters valid and invalid entries from the source file and writes them to respective files.
+    This function filters valid and invalid entries from the source file and writes them to their respective files.
 
     Args:
-    - valid_file_path (str): Path to the file where valid entries will be written.
-    - invalid_file_path (str): Path to the file where invalid entries will be written.
-    - source_file_path (str): Path to the source file containing data rows.
+    - valid_file_path (str): The path to the file where valid entries will be written.
+    - invalid_file_path (str): The path to the file where invalid entries will be written.
+    - source_file_path (str): The path to the source file that contains the data rows.
 
     Details:
     The function reads the source file line by line. Each line is split based on the comma delimiter.
     Lines with three non-empty segments are considered valid, and others are considered invalid.
     """
     if not os.path.exists(source_file_path):
-        raise FileNotFoundError(f"Source file: {source_file_path}, does not exist.")
+        raise FileNotFoundError(
+            f"The specified source file: {source_file_path}, does not exist."
+        )
 
     valid_entries = []
     invalid_entries = []
@@ -62,10 +60,9 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
 
 def test_filter_and_write():
     """
-    Test the filter_and_write function.
+    This function tests the 'filter_and_write' function.
 
-    This function tests the filter_and_write function by creating a temporary source file with test data,
-    then calling filter_and_write and checking if the valid and invalid entries were correctly filtered and written.
+    The function tests 'filter_and_write' by creating a temporary source file with test data. It then calls 'filter_and_write' and verifies that the valid and invalid entries were correctly filtered and written.
     """
 
     import tempfile
@@ -78,10 +75,10 @@ def test_filter_and_write():
     with tempfile.NamedTemporaryFile(
         delete=False
     ) as valid_file, tempfile.NamedTemporaryFile(delete=False) as invalid_file:
-        # Call the filter_and_write function.
+        # Call the 'filter_and_write' function.
         filter_and_write(valid_file.name, invalid_file.name, source_file.name)
 
-        # Check if the valid and invalid entries were correctly filtered and written.
+        # Verify that the valid and invalid entries were correctly filtered and written.
         with open(valid_file.name, "r") as valid_file_check, open(
             invalid_file.name, "r"
         ) as invalid_file_check:

@@ -1,24 +1,27 @@
 #!/bin/bash
 
 # Task:
-# Monitor disk usage and send an alert if the usage exceeds a specified threshold (e.g., 90%).
+# This script monitors the disk usage and sends an alert if the usage exceeds a specified threshold (90% in this case).
 
-# If this script is sourced from another script, return without executing the rest of the script.
+# If this script is sourced from another script, it will return without executing the rest of the script.
+# This is to prevent the script from running in a different context than intended.
 if [[ "$0" != "$BASH_SOURCE" ]]; then return; fi
 
-# Define the disk usage threshold.
+# The disk usage threshold is defined here. If the disk usage exceeds this value, an alert will be printed.
 threshold=90
 
-# Start an infinite loop to periodically check the disk usage.
+# An infinite loop is started to periodically check the disk usage.
 while true; do
-    # Extract the disk usage percentage for the root filesystem.
+    # The disk usage percentage for the root filesystem is extracted using the 'df' command.
+    # The 'awk' command is used to select the fifth field (which contains the disk usage percentage) from the output of 'df'.
+    # The 'tr' command is used to remove the '%' character from the output.
     usage=$(df / | tail -n 1 | awk '{print $5}' | tr -d '%')
 
-    # Check if the usage exceeds the threshold.
-    if (( usage > threshold )); then
+    # If the disk usage exceeds the threshold, an alert is printed to the console.
+    if ((usage > threshold)); then
         echo "Disk Usage is above 90%"
     fi
 
-    # Wait for 10 seconds before rechecking.
+    # The script waits for 10 seconds before checking the disk usage again.
     sleep 10
 done
