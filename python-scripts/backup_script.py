@@ -27,7 +27,7 @@ def backup_files(source_directory, backup_directory):
         # Check if source_directory exists.
         if not os.path.exists(source_directory):
             raise FileNotFoundError(
-                f"Source directory {source_directory} does not exist."
+                f"Source directory: {source_directory}, does not exist."
             )
 
         # Check if backup_directory exists, if not create it.
@@ -42,7 +42,7 @@ def backup_files(source_directory, backup_directory):
     except FileNotFoundError as fnf_error:
         print(fnf_error)
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print(f"The following error occurred: {str(e)}")
 
 
 def test_backup_files():
@@ -59,7 +59,7 @@ def test_backup_files():
     with tempfile.TemporaryDirectory() as source_directory:
         test_file_path = os.path.join(source_directory, "test_file.txt")
         with open(test_file_path, "w") as test_file:
-            test_file.write("Test file content.")
+            test_file.write("This is test content being written to this file.")
 
         # Create a temporary backup directory.
         with tempfile.TemporaryDirectory() as backup_directory:
@@ -68,9 +68,9 @@ def test_backup_files():
 
             # Check if the test file was copied to the backup directory.
             backup_file_path = os.path.join(backup_directory, "test_file.txt")
-            assert os.path.exists(backup_file_path), "Test file was not backed up."
+            assert os.path.exists(backup_file_path), "The test file was not backed-up!"
 
-    print("Test passed.")
+    print("Test passed!")
 
 
 if __name__ == "__main__":

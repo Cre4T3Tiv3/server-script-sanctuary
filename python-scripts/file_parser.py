@@ -16,6 +16,8 @@ Usage:
 Run this script and use the `filter_and_write` function, providing the necessary paths for the source, valid, and invalid files.
 """
 
+import os
+
 
 def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     """
@@ -31,7 +33,7 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     Lines with three non-empty segments are considered valid, and others are considered invalid.
     """
     if not os.path.exists(source_file_path):
-        raise FileNotFoundError(f"Source file {source_file_path} does not exist.")
+        raise FileNotFoundError(f"Source file: {source_file_path}, does not exist.")
 
     valid_entries = []
     invalid_entries = []
@@ -85,12 +87,12 @@ def test_filter_and_write():
         ) as invalid_file_check:
             assert (
                 valid_file_check.read() == "valid1,valid2,valid3\n"
-            ), "Valid entries were not correctly written."
+            ), "Valid entries were not correctly written to the file."
             assert (
                 invalid_file_check.read() == "invalid1,invalid2\n"
-            ), "Invalid entries were not correctly written."
+            ), "Invalid entries were not correctly written to the file."
 
-    print("Test passed.")
+    print("Test passed!")
 
 
 if __name__ == "__main__":
