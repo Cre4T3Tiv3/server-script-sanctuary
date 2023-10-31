@@ -29,7 +29,7 @@ def check_website_status(url):
         if response.status_code == 200:
             return "The website is up!"
         else:
-            return "Website is down!"
+            return "The website is down!"
     except requests.exceptions.RequestException as err:
         return f"The following error occurred: {err}"
     except Exception as e:
