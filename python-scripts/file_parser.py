@@ -39,7 +39,7 @@ def filter_and_write(valid_file_path, invalid_file_path, source_file_path):
     with open(source_file_path, "r") as file:
         valid_entries = []
         invalid_entries = []
-        # Process each line in the source file
+        # Process each line in the source file.
         for line in file:
             data = line.strip().split(",")
             if len(data) == 3 and all(

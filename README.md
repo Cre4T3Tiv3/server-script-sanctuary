@@ -12,7 +12,7 @@ Welcome to my curated collection of scripts and tools aimed at server administra
     - [file_parser.py](./python-scripts/file_parser.py)
     - [website_uptime_checker.py](./python-scripts/website_uptime_checker.py)
 - `powershell-scripts/`: Contains PowerShell scripts I've developed mainly for Windows server tasks.
-    - [automate_tasks.ps1](./powershell-scripts/automate_tasks.ps1)
+    - [disk_usage_alert.ps1](./powershell-scripts/disk_usage_alert.ps1)
 - `documentation/`: **(Work in Progress)** Detailed documentation for each script, explaining its usage, requirements, and any other pertinent details. I'm currently drafting these, so stay tuned for comprehensive guides!
 
 ## 🐍 Python Scripts

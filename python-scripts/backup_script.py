@@ -24,13 +24,13 @@ def backup_files(source_directory, backup_directory):
     - backup_directory (str): The directory where new files should be backed up.
     """
     try:
-        # Check if source_directory exists
+        # Check if source_directory exists.
         if not os.path.exists(source_directory):
             raise FileNotFoundError(
                 f"Source directory {source_directory} does not exist."
             )
 
-        # Check if backup_directory exists, if not create it
+        # Check if backup_directory exists, if not create it.
         if not os.path.exists(backup_directory):
             os.makedirs(backup_directory)
 
