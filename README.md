@@ -1,4 +1,5 @@
 # Server Script Sanctuary
+
 🚀 Project Status: This project is actively under development, with frequent updates and enhancements in progress.
 
 Welcome to my curated collection of scripts and tools aimed at server administration, monitoring, and automation tasks. I've crafted these scripts with care, addressing a variety of scenarios I've encountered in real-world server and system administration.
@@ -6,14 +7,14 @@ Welcome to my curated collection of scripts and tools aimed at server administra
 ## 📁 Directory Structure
 
 - `bash-scripts/`: Contains Bash scripts I've designed to assist with various server-related tasks.
-    - [disk_usage_alert.sh](./bash-scripts/disk_usage_alert.sh)
+  - [disk_usage_alert.sh](./bash-scripts/disk_usage_alert.sh)
 - `python-scripts/`: Inside here are Python scripts tailored for diverse server-related tasks.
-    - [api_consumer.py](./python-scripts/api_consumer.py)
-    - [backup_script.py](./python-scripts/backup_script.py)
-    - [file_parser.py](./python-scripts/file_parser.py)
-    - [website_uptime_checker.py](./python-scripts/website_uptime_checker.py)
+  - [api_consumer.py](./python-scripts/api_consumer.py)
+  - [backup_script.py](./python-scripts/backup_script.py)
+  - [file_parser.py](./python-scripts/file_parser.py)
+  - [website_uptime_checker.py](./python-scripts/website_uptime_checker.py)
 - `powershell-scripts/`: Contains PowerShell scripts I've developed mainly for Windows server tasks.
-    - [disk_usage_alert.ps1](./powershell-scripts/disk_usage_alert.ps1)
+  - [disk_usage_alert.ps1](./powershell-scripts/disk_usage_alert.ps1)
 - `documentation/`: **(Work in Progress)** Detailed documentation for each script, explaining its usage, requirements, and any other pertinent details. I'm currently drafting these, so stay tuned for comprehensive guides!
 
 ## 🐍 Python Scripts
@@ -34,11 +35,17 @@ Automates the backup process for essential data. To understand its functionality
 
 A tool to monitor website uptime and notify of any downtimes. Dive into its specifics and usage guide in the [documentation](./documentation/website_uptime_checker.md).
 
+## 🖥️ Bash Scripts
+
+### [disk_usage_alert.sh](./bash-scripts/disk_usage_alert.sh)
+
+Designed to automate monitoring of the disk usage and to send an alert if the usage exceeds a specified threshold (e.g., 90%). Dive into the [documentation](./documentation/disk_usage_alert.sh.md) for a comprehensive overview.
+
 ## 🖥️ PowerShell Scripts
 
-### [automate_tasks.ps1](./powershell-scripts/automate_tasks.ps1)
+### [disk_usage_alert.ps1](./powershell-scripts/disk_usage_alert.ps1)
 
-Designed to automate the creation of folders and files based on a predefined structure. Dive into the [documentation](./documentation/automate_tasks.ps1.md) for a comprehensive overview.
+Designed to automate monitoring of the root directory's disk usage and to send an alert if the usage exceeds a specified threshold (e.g., 90%). Dive into the [documentation](./documentation/disk_usage_alert.ps1.md) for a comprehensive overview.
 
 ## 🚀 Upcoming Features
 
