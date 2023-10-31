@@ -1,4 +1,5 @@
 # Server Script Sanctuary
+🚀 Project Status: This project is actively under development, with frequent updates and enhancements in progress.
 
 Welcome to my curated collection of scripts and tools aimed at server administration, monitoring, and automation tasks. I've crafted these scripts with care, addressing a variety of scenarios I've encountered in real-world server and system administration.
 
