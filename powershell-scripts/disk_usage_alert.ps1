@@ -3,20 +3,21 @@
 # Task:
 # Monitor the root directory's disk usage and send an alert if it exceeds 90%.
 
-# Extensive Details:
-# - The script is suitable for any OS with PowerShell Core, which includes Windows, Linux, and macOS.
-# - Define a disk usage threshold (in this case, 90%), which can be adjusted.
-# - Utilize the `Get-PSDrive` cmdlet, which works across multiple OSes, to get details of the root filesystem.
-# - Calculate the usage percentage by dividing the used space by the total space.
-# - Compare the usage value against the defined threshold to decide whether to send an alert.
-# - The `Start-Sleep -Seconds 10` command makes the script wait for 10 seconds before rechecking the disk usage.
+# Check if the script is being run from another script, if so, exit without executing the rest of the script.
+if ($myInvocation.InvocationName -ne '') { return }
 
+# Get the root drive details
 $rootDrive = Get-PSDrive -Name "Root" -PSProvider FileSystem
+
+# Calculate the used space, total space, and disk usage percentage.
 $usedSpace = $rootDrive.Used
 $totalSpace = $rootDrive.Size
 $diskUsagePercent = ($usedSpace / $totalSpace) * 100
 
+# Check if the disk usage exceeds 90%, if so, output a warning message.
 if ($diskUsagePercent -gt 90) {
     Write-Output "Disk usage alert! It's over 90%"
 }
+
+# Wait for 10 seconds before the next check.
 Start-Sleep -Seconds 10
