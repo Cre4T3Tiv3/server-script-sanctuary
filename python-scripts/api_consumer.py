@@ -65,7 +65,6 @@ def test_fetch_api_data():
     data = fetch_api_data(api_url)
 
     # Check if the returned data is as expected.
-    # In this case, we're just checking if we got a list of posts.
     assert isinstance(data, list), f"Expected a list of posts, but got {type(data)}"
 
     print("Test passed.")
