@@ -20,3 +20,7 @@ if ($diskUsagePercent -gt 90) {
     Write-Output "Disk usage alert! It's over 90%"
 }
 Start-Sleep -Seconds 10
+<<<<<<< HEAD
+=======
+git commit -m 'update(details): revised the Extensive Details across all in-scope code.'
+>>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7

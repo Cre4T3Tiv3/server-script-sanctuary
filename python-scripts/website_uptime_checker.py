@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+#!/usr/bin/env python3
+
+>>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
 """
 website_uptime_checker.py
 
@@ -24,6 +29,7 @@ def check_website_status(url):
     Returns:
     - str: A message indicating whether the website is up or down.
     """
+<<<<<<< HEAD
     try:
         response = requests.get(url)
         if response.status_code == 200:
@@ -58,3 +64,10 @@ def test_check_website_status():
 if __name__ == "__main__":
     test_check_website_status()
     print(check_website_status("https://www.example.com"))
+=======
+    response = requests.get(url)
+    if response.status_code == 200:
+        return "Website is up!"
+    else:
+        return "Website is down!"
+>>>>>>> a5cdbfc23a9abfbadd58a672ea6dadbbb2ccf5a7
