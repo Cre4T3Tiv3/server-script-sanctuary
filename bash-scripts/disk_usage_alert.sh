@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Task:
 # This script monitors the disk usage and sends an alert if the usage exceeds a specified threshold (90% in this case).
 
